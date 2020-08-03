@@ -5,14 +5,14 @@ from setuptools import setup
 
 
 setup(
-    name="change_this_to_name_of_package",
-    version="0.1",
-    description="CREATE A DESCRIPTION",
-    url="https://github.com/CuriBio/CHANGE_THIS_TO_NAME_OF_REPO",
+    name="immutable_data_validation",
+    version="0.2",
+    description="Persisting objects.",
+    url="https://github.com/CuriBio/immutable_data_validation",
     author="Curi Bio",
     author_email="contact@curibio.com",
     license="MIT",
     packages=find_packages("src"),
     package_dir={"": "src"},
-    install_requires=[],
+    install_requires=["validator-collection>=1.3.5"],
 )
