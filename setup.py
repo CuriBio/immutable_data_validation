@@ -7,7 +7,7 @@ from setuptools import setup
 setup(
     name="immutable_data_validation",
     version="0.2",
-    description="Persisting objects.",
+    description="Validating basic Python data types.",
     url="https://github.com/CuriBio/immutable_data_validation",
     author="Curi Bio",
     author_email="contact@curibio.com",

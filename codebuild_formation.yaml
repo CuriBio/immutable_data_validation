@@ -75,7 +75,7 @@ Resources:
         GitCloneDepth: 1
 
         ReportBuildStatus: True
-        Location: "https://github.com/CuriBio/immutable_data-validation/"
+        Location: "https://github.com/CuriBio/immutable_data_validation/"
         Type: GITHUB
 
       QueuedTimeoutInMinutes: 10
