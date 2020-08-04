@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Validates immmutable data."""
 from .checkers import is_utc_datetime
 from .checkers import is_uuid
 from .constants import MYSQL_SIGNED_INT_MAX_VALUE

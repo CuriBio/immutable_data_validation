@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Functions wrapping data type validators."""
 import datetime
 from typing import Optional
 from typing import Union
@@ -29,6 +30,7 @@ def validate_str(
     maximum_length: Optional[int] = None,
     extra_error_msg: str = None,
 ) -> Union[None, str]:
+    """Check that object is a valid string."""
     try:
         validated_value: str = validators.string(
             value,
@@ -51,6 +53,7 @@ def validate_str(
 def validate_uuid(
     value: object, allow_null: bool = False, extra_error_msg: str = None
 ) -> Union[UUID, None]:
+    """Check that object is a valid UUID."""
     try:
         validated_value: UUID = validators.uuid(value, allow_empty=allow_null)
     except EmptyValueError as e:
@@ -67,6 +70,7 @@ def validate_float(
     maximum: Optional[Union[float, int]] = None,
     extra_error_msg: str = None,
 ) -> Union[float, None]:
+    """Check that object is a valid float."""
     try:
         validated_value: float = validators.float(
             value, allow_empty=allow_null, minimum=minimum, maximum=maximum
@@ -90,6 +94,7 @@ def validate_int(
     maximum: Optional[int] = None,
     extra_error_msg: str = None,
 ) -> Union[int, None]:
+    """Check that object is a valid int."""
     try:
         validated_value: int = validators.integer(
             value, allow_empty=allow_null, minimum=minimum, maximum=maximum
@@ -115,6 +120,7 @@ def validate_datetime(
     maximum: Optional[datetime.datetime] = None,
     extra_error_msg: str = None,
 ) -> Union[datetime.datetime, None]:
+    """Check that object is a valid datetime."""
     try:
         validated_value: datetime.datetime = validators.datetime(
             value, allow_empty=allow_null, minimum=minimum, maximum=maximum

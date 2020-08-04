@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Functions for checking type of datas."""
 from .errors import ImmutableDataValidationError
 from .errors import ValidationCollectionCannotCoerceError
 from .errors import ValidationCollectionEmptyValueError
