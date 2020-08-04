@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Constants for validating immutable data."""
 MYSQL_SIGNED_INT_MAX_VALUE = 2147483647
 MYSQL_SIGNED_INT_MIN_VALUE = -2147483648
 MYSQL_SIGNED_TINYINT_MAX_VALUE = 127

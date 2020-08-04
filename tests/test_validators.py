@@ -138,7 +138,7 @@ def test_validate_sql_utc_datetime__raises_error_if_after_maximum():
 
 
 @pytest.mark.parametrize(
-    "func,value,kwargs,expected_error,expected_text_in_error,test_description",
+    "the_func,value,kwargs,expected_error,expected_text_in_the_error,test_description",
     [
         (
             validate_utc_datetime,
@@ -146,7 +146,7 @@ def test_validate_sql_utc_datetime__raises_error_if_after_maximum():
             {"allow_null": True},
             None,
             None,
-            "allows None when specified",
+            "allow None when specified",
         ),
         (
             validate_sql_utc_datetime,
@@ -154,7 +154,7 @@ def test_validate_sql_utc_datetime__raises_error_if_after_maximum():
             {"allow_null": True},
             None,
             None,
-            "allows None when specified",
+            "allow None when specified",
         ),
         (
             validate_crc32,
@@ -170,7 +170,7 @@ def test_validate_sql_utc_datetime__raises_error_if_after_maximum():
             {"allow_null": True},
             None,
             None,
-            "allows None when specified",
+            "allow None when specified",
         ),
         (
             validate_crc32,
@@ -190,34 +190,39 @@ def test_validate_sql_utc_datetime__raises_error_if_after_maximum():
         ),
     ],
 )
-def test_wrapped_error(
-    func, value, kwargs, expected_error, expected_text_in_error, test_description
+def test_error(
+    the_func,
+    value,
+    kwargs,
+    expected_error,
+    expected_text_in_the_error,
+    test_description,
 ):
     if kwargs is None:
         kwargs = dict()
 
-    def run_func():
-        return func(value, **kwargs)
+    def run_the_func():
+        return the_func(value, **kwargs)
 
     if expected_error is not None:
         with pytest.raises(expected_error) as e:
-            run_func()
-        if expected_text_in_error is not None:
-            if not isinstance(expected_text_in_error, (list, tuple)):
-                expected_text_in_error = [expected_text_in_error]
-            for this_expected_text_in_error in expected_text_in_error:
+            run_the_func()
+        if expected_text_in_the_error is not None:
+            if not isinstance(expected_text_in_the_error, (list, tuple)):
+                expected_text_in_the_error = [expected_text_in_the_error]
+            for this_expected_text_in_error in expected_text_in_the_error:
                 assert this_expected_text_in_error in str(e)
     else:
-        run_func()
+        run_the_func()
 
 
 @pytest.mark.parametrize(
     "func,value,kwargs,expected,test_description",
     [(validate_crc32, "a910bco3", None, "a910bco3", "standard")],
 )
-def test_returns_valid_value(func, value, kwargs, expected, test_description):
+def test_func_returns_valid_value(func, value, kwargs, expected, test_description):
     if kwargs is None:
         kwargs = dict()
 
-    actual = func(value, **kwargs)
-    assert actual == expected
+    actual_value = func(value, **kwargs)
+    assert actual_value == expected

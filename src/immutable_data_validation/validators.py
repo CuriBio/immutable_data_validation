@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Functions for validating immutable data."""
 import datetime
 from typing import Optional
 from typing import Union
@@ -17,6 +18,7 @@ def validate_utc_datetime(
     maximum: Optional[datetime.datetime] = None,
     extra_error_msg: str = None,
 ) -> Union[None, datetime.datetime]:
+    """Check that object is a valid UTC Datetime."""
     datetime_to_validate = validate_datetime(
         datetime_to_validate,
         allow_null=allow_null,
@@ -53,6 +55,7 @@ def validate_sql_utc_datetime(
     maximum: Optional[datetime.datetime] = None,
     extra_error_msg: str = None,
 ) -> Union[None, datetime.datetime]:
+    """Check that object is a valid SQL UTC Datetime."""
     value = validate_utc_datetime(
         value,
         allow_null=allow_null,

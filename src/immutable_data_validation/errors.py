@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""Generic errors for immutable data validation."""
+
+
 class ImmutableDataValidationError(Exception):
     def __init__(self, msg: str = None, append_text: str = None):
         if append_text is not None:
