@@ -1,5 +1,3 @@
-Before CodeBuild can automatically publish to PyPI, the package must be registered using command `twine register`: https://twine.readthedocs.io/en/latest/#twine-register
-
 .. image:: https://github.com/CuriBio/immutable-data-validation/workflows/Dev/badge.svg?branch=development
    :alt: Development Branch Build
 
