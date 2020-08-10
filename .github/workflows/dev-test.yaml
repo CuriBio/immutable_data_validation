@@ -97,7 +97,7 @@ jobs:
           flags: unittests
           env_vars: OS,PYTHON
           name: codecov-umbrella
-          fail_ci_if_error: true
+          fail_ci_if_error: true  # Tanner (8/7/20): once fundmental issue with codecov timeout is fixed, change this back to True
 
       - name: Run prerelease
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == 3.7
