@@ -39,13 +39,19 @@ def validate_str(
             maximum_length=maximum_length,
         )
     except EmptyValueError as e:
-        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg) from e
     except CannotCoerceError as e:
-        raise ValidationCollectionCannotCoerceError(e, append_text=extra_error_msg)
+        raise ValidationCollectionCannotCoerceError(
+            e, append_text=extra_error_msg
+        ) from e
     except MinimumLengthError as e:
-        raise ValidationCollectionMinimumLengthError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMinimumLengthError(
+            e, append_text=extra_error_msg
+        ) from e
     except MaximumLengthError as e:
-        raise ValidationCollectionMaximumLengthError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMaximumLengthError(
+            e, append_text=extra_error_msg
+        ) from e
 
     return validated_value
 
@@ -57,9 +63,11 @@ def validate_uuid(
     try:
         validated_value: UUID = validators.uuid(value, allow_empty=allow_null)
     except EmptyValueError as e:
-        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg) from e
     except CannotCoerceError as e:
-        raise ValidationCollectionCannotCoerceError(e, append_text=extra_error_msg)
+        raise ValidationCollectionCannotCoerceError(
+            e, append_text=extra_error_msg
+        ) from e
     return validated_value
 
 
@@ -76,13 +84,19 @@ def validate_float(
             value, allow_empty=allow_null, minimum=minimum, maximum=maximum
         )
     except EmptyValueError as e:
-        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg) from e
     except CannotCoerceError as e:
-        raise ValidationCollectionCannotCoerceError(e, append_text=extra_error_msg)
+        raise ValidationCollectionCannotCoerceError(
+            e, append_text=extra_error_msg
+        ) from e
     except MinimumValueError as e:
-        raise ValidationCollectionMinimumValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMinimumValueError(
+            e, append_text=extra_error_msg
+        ) from e
     except MaximumValueError as e:
-        raise ValidationCollectionMaximumValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMaximumValueError(
+            e, append_text=extra_error_msg
+        ) from e
 
     return validated_value
 
@@ -100,15 +114,23 @@ def validate_int(
             value, allow_empty=allow_null, minimum=minimum, maximum=maximum
         )
     except EmptyValueError as e:
-        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg) from e
     except NotAnIntegerError as e:
-        raise ValidationCollectionNotAnIntegerError(e, append_text=extra_error_msg)
+        raise ValidationCollectionNotAnIntegerError(
+            e, append_text=extra_error_msg
+        ) from e
     except MinimumValueError as e:
-        raise ValidationCollectionMinimumValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMinimumValueError(
+            e, append_text=extra_error_msg
+        ) from e
     except MaximumValueError as e:
-        raise ValidationCollectionMaximumValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMaximumValueError(
+            e, append_text=extra_error_msg
+        ) from e
     except CannotCoerceError as e:
-        raise ValidationCollectionCannotCoerceError(e, append_text=extra_error_msg)
+        raise ValidationCollectionCannotCoerceError(
+            e, append_text=extra_error_msg
+        ) from e
 
     return validated_value
 
@@ -126,12 +148,18 @@ def validate_datetime(
             value, allow_empty=allow_null, minimum=minimum, maximum=maximum
         )
     except EmptyValueError as e:
-        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionEmptyValueError(e, append_text=extra_error_msg) from e
     except CannotCoerceError as e:
-        raise ValidationCollectionCannotCoerceError(e, append_text=extra_error_msg)
+        raise ValidationCollectionCannotCoerceError(
+            e, append_text=extra_error_msg
+        ) from e
     except MinimumValueError as e:
-        raise ValidationCollectionMinimumValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMinimumValueError(
+            e, append_text=extra_error_msg
+        ) from e
     except MaximumValueError as e:
-        raise ValidationCollectionMaximumValueError(e, append_text=extra_error_msg)
+        raise ValidationCollectionMaximumValueError(
+            e, append_text=extra_error_msg
+        ) from e
 
     return validated_value
