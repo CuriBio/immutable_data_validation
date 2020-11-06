@@ -1,2 +1,2 @@
 # pip install -r requirements.txt
-validator-collection==1.3.5
+validator-collection==1.5.0
